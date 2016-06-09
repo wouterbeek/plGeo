@@ -4,6 +4,7 @@ LDSOFLAGS=-shared
 LIBPL=space.pl
 LIBS=-lspatialindex -lgeos
 OBJ=c/space.o c/globals.o c/Index.o c/Search.o c/Shapes.o c/lock.o c/debug.o
+PL=swipl
 SOBJ=$(PACKSODIR)/space.$(SOEXT)
 
 all:		$(SOBJ)
@@ -34,12 +35,12 @@ c/space.o:	c/space.cc
 		$(CC) $(ARCH) $(CFLAGS) -c -o $@ c/space.cc
 
 check::
-	swipl -q -f test_space.pl -g test_space,halt -t 'halt(1)'
+		$(PL) -q -f test/test_space.pl -g test_space,halt -t 'halt(1)'
 
 install::
 
 clean:
-	rm -f $(OBJ)
+		rm -f $(OBJ)
 
 distclean:	clean
 		rm -f $(SOBJ)

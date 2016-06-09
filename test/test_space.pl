@@ -8,10 +8,11 @@
 */
 
 :- use_module(library(geo/rdf_wgs84)).
+:- use_module(library(geoindex)).
+:- use_module(library(georss)).
 :- use_module(library(plunit)).
+:- use_module(library(rdf/rdfio)).
 :- use_module(library(semweb/rdf11)).
-:- use_module(library(space/georss)).
-:- use_module(library(space/space)).
 
 :- rdf_register_prefix(poseidon, 'http://semanticweb.cs.vu.nl/poseidon/ns/instances/').
 
@@ -19,7 +20,7 @@
 
 
 
-:- begin_tests(space, [setup(rdf_load(clearways)),cleanup(rdf_reset_db)]).
+:- begin_tests(space, [setup(rdf_load_file('test/clearways.nt')),cleanup(rdf_reset_db)]).
 
 test(gis_clear, [fail]) :-
   gis_clear(test),

@@ -3,7 +3,6 @@
   [
     set_space/1,            % +Opt
     set_space/2,            % +Index, +Opt
-    gis_setting/1,          % ?Opt
                               
     gis_populate_index/0,        
     gis_populate_index/1,   % +Index
@@ -59,7 +58,7 @@
 :- use_module(library(semweb/rdf11)).
 :- use_module(library(shlib)).
 
-:- use_foreign_library(space).
+:- use_foreign_library(foreign(space)).
 
 :- dynamic
     gis:resource_shape_hook/3,
@@ -99,7 +98,7 @@ gis:gis_setting(rtree_default_index(default)).
 %! gis_default_index(-Index) is det.
 
 gis_default_index(Index) :-
-  gis_setting(rtree_default_index(Index)).
+  gis:gis_setting(rtree_default_index(Index)).
 
 
 

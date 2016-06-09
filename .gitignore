@@ -1,0 +1,4 @@
+*~
+buildenv.sh
+c/*.o
+lib/x86_64-linux/*.so
