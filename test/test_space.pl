@@ -20,7 +20,7 @@
 
 
 
-:- begin_tests(space, [setup(rdf_load_file('test/clearways.nt')),cleanup(rdf_reset_db)]).
+:- begin_tests(space, [setup(rdf_load_file('clearways.nt')),cleanup(rdf_reset_db)]).
 
 test(gis_clear, [fail]) :-
   gis_clear(test),
