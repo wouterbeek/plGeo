@@ -1,4 +1,4 @@
-CFLAGS+= -I. -I"/home/wbeek/lib/swipl/include" -g
+CFLAGS+= -I. -I"/home/wbeek/lib/swipl/include" -g -fPIC
 LD=g++
 LDSOFLAGS=-shared
 LIBPL=space.pl
