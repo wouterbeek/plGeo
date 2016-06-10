@@ -2,9 +2,9 @@ CFLAGS+= -I. -I"/home/wbeek/lib/swipl/include" -g
 LD=g++
 LDSOFLAGS=-shared
 LIBPL=space.pl
-LIBS=-lspatialindex -lgeos 
+LIBS=@LIBS@
 OBJ=c/space.o c/globals.o c/Index.o c/Search.o c/Shapes.o c/lock.o c/debug.o
-SOBJ=$(PACKSODIR)/space.so
+SOBJ=$(PACKSODIR)/space.@SO@
 
 all:		$(SOBJ)
 

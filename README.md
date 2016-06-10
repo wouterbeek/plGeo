@@ -15,7 +15,12 @@ machines.
   4. Clone this repository in your SWI-Prolog _pack_ directory,
      typically `~/lib/swipl/pack` and install it.
   
-  5. Start SWI-Prolog and run `?- pack_rebuild(plGeo).`
+  5. Run `autoconf`.  This builds the config file.
+  
+  6. Run `./configure`.  This build the Makefile.
+  
+  6. Start SWI-Prolog and run `?- pack_rebuild(plGeo).` This uses the
+     Makefile to build the Prolog Pack.
 
-If all worked out, you can now use `?- use_module(library(geoindex)).`
-to load the library.
+If everything worked out, you can now use `?- [library(geoindex)].` to
+load the library.
