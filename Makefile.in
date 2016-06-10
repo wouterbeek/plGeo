@@ -4,12 +4,11 @@ LDSOFLAGS=-shared
 LIBPL=space.pl
 LIBS=@LIBS@
 OBJ=c/space.o c/globals.o c/Index.o c/Search.o c/Shapes.o c/lock.o c/debug.o
-SOBJ=$(PACKSODIR)/space.@SO@
+SOBJ=space.@SO@
 
 all:		$(SOBJ)
 
 $(SOBJ):	$(OBJ)
-		mkdir -p $(PACKSODIR)
 		$(LD) $(ARCH) $(LDSOFLAGS) -o $@ $< $(LIBS) $(SWISOLIB)
 
 c/debug.o:	c/debug.cc c/debug.h
