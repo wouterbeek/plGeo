@@ -6,3 +6,4 @@ buildenv.sh
 c/*.o
 configure
 lib/x86_64-linux/*.so
+Makefile
